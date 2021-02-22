@@ -65,5 +65,8 @@ https://blog.csdn.net/SCUTJAY/article/details/104653599
 共享锁: 又叫做读锁. 当用户要进行数据的读取时,对数据加上共享锁.共享锁可以同时加上多个.
 排他锁: 又叫做写锁. 当用户要进行数据的写入时,对数据加上排他锁.排他锁只可以加一个,他和其他的排他锁,共享锁都相斥.
 
+8、mysql如何加锁
+在select读取数据时可以加上“共享锁” SELECT * FROM table lock in share mode。 update、insert和delete会默认给事务加上“排他锁”， 若需要手动加排他锁则在末尾加上 for update。
+
 
 https://zhuanlan.zhihu.com/p/76873520
